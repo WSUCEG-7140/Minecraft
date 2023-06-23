@@ -774,10 +774,18 @@ class Window(pyglet.window.Window):
             self.block = self.inventory[index]
         elif symbol == key.UP:
             self.speed_up()
+        elif symbol == key.DOWN:
+            self.speed_down()
 
     def speed_up(self):
         if self.walking_speed <= 15:
             self.walking_speed += 5
+
+    def speed_down(self):
+        if self.walking_speed > 5:
+            self.walking_speed -= 5
+
+
 
     def on_key_release(self, symbol, modifiers):
         """ Called when the player releases a key. See pyglet docs for key
